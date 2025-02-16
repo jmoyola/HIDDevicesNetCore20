@@ -7,7 +7,7 @@
 [![Nuget](https://img.shields.io/nuget/v/HIDDevices.Usages)](https://www.nuget.org/packages/HIDDevices.Usages)
 
 # Description
-FORK NOTE: Fork from original downgrading Netcore 2.1 to 2.0 to allow .NetFrameworks 4.8 use it
+FORK NOTE: Fork from original HIDDevices downgrading Netcore 2.1 to 2.0 to allow .NetFrameworks 4.8 use it
 
 This library provides a cross-platform service for asynchronously accessing HID devices, such as Gamepads, Joysticks,
 Multi-axis controllers, and programmable button pads. It supports Plug & Play, correctly identifying when controllers
