@@ -10,6 +10,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading;
+using System.Threading.Tasks;
 using HidSharp;
 using HidSharp.Reports;
 using Microsoft.VisualStudio.Threading;
@@ -210,7 +211,7 @@ public sealed class Device : IObservable<IList<ControlChange>>, IReadOnlyDiction
                     finally
                     {
                         _connectedSubject?.OnNext(false);
-                        await stream.DisposeAsync().ConfigureAwait(false);
+                        await Task.Run(()=> stream.Dispose()).ConfigureAwait(false);
                     }
 
                     Devices.Logger?.Log(Event.DeviceConnectionClosed, Name);

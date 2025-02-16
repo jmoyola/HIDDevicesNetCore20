@@ -87,7 +87,7 @@ public readonly struct ControlValue : IEquatable<ControlValue>
     public override bool Equals(object? obj) => obj is ControlValue other && Equals(other);
 
     /// <inheritdoc />
-    public override int GetHashCode() => HashCode.Combine(Change, Info, Value);
+    public override int GetHashCode() => Change.GetHashCode() | Info.GetHashCode() | Value.GetHashCode();
 
     /// <summary>
     ///     Implements the == operator.

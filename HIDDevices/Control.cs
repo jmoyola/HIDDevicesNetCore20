@@ -165,5 +165,5 @@ public class Control
             : (value - _minimumValue) / (double)(_maximumValue - _minimumValue);
 
     /// <inheritdoc />
-    public override string ToString() => string.Join(' ', _usages.Select(u => $"0x{u:X8}"));
+    public override string ToString() => string.Join(" ", _usages.Select(u => $"0x{u:X8}"));
 }

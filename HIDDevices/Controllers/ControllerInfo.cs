@@ -94,8 +94,10 @@ public partial class Controller
             var controlCount = device.Count;
             var mapping = new List<ControlInfo>(controlCount);
             var controlScores = new Dictionary<Control, uint>(controlCount);
-            foreach (var (propertyName, attributes) in controlPropertyAttributes)
+            foreach (var kv in controlPropertyAttributes)
             {
+                var propertyName=kv.Key;
+                var attributes = kv.Value;
                 foreach (var control in device.Keys)
                 {
                     foreach (var controlAttribute in attributes.Controls.Where(controlAttribute =>

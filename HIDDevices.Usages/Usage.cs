@@ -128,7 +128,7 @@ public sealed class Usage : IEquatable<Usage>
     public override bool Equals(object? obj) => ReferenceEquals(this, obj) || (obj is Usage other && Equals(other));
 
     /// <inheritdoc />
-    public override int GetHashCode() => HashCode.Combine(Page, Id);
+    public override int GetHashCode() => Page.GetHashCode() | Id.GetHashCode();
 
     /// <inheritdoc />
     public override string ToString() => $"{Page} - {Name}";

@@ -14,5 +14,5 @@ namespace DevDecoder.HIDDevices.Controllers;
 /// <returns>A controller; otherwise <see langword="null" />.</returns>
 /// <seealso cref="Controller" />
 /// <seealso cref="Device" />
-[return: MaybeNull]
+
 public delegate T CreateControllerDelegate<out T>(Device device) where T : Controller?;

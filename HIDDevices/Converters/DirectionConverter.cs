@@ -24,9 +24,20 @@ public sealed class DirectionConverter : ControlConverter<Direction>
     {
     }
 
+    private int Clamp(int value, int lower, int upper)
+    {
+        var l =Math.Abs(value - lower);
+        var u =Math.Abs(value - upper);
+        
+        if (l < u)
+            return lower;
+        if(u>l)
+            return upper;
+        return value;
+    }
     /// <inheritdoc />
     protected override Direction Convert(ITypeDescriptorContext context, CultureInfo culture, double value) =>
         double.IsNaN(value)
             ? Direction.NotPressed
-            : (Direction)Math.Clamp((int)Math.Round(value * 7.0), 0, 7);
+            : (Direction)Clamp((int)Math.Round(value * 7.0), 0, 7);
 }

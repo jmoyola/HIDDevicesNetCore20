@@ -271,7 +271,7 @@ public partial class Controller : IReadOnlyCollection<ControlValue>, IDisposable
     ///     <see langword="null" />.
     /// </param>
     /// <returns>A controller; or <see langword="null" />.</returns>
-    [return: MaybeNull]
+
     public static T Create<T>(Device device) where T : Controller =>
         ControllerInfo.Get<T>().CreateController(device) as T;
 

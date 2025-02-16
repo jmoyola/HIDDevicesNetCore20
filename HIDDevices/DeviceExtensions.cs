@@ -209,7 +209,6 @@ public static class DeviceExtensions
     ///     A controller of the <see cref="T">specified type</see>; otherwise <see langword="null" /> if the
     ///     <see cref="device">specified device</see> does not support the specified controller.
     /// </returns>
-    [return: MaybeNull]
     public static T Controller<T>(this Device device) where T : Controller =>
         HIDDevices.Controllers.Controller.Create<T>(device);
 

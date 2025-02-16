@@ -84,7 +84,7 @@ public readonly struct ControlChange : IEquatable<ControlChange>
     public override bool Equals(object? obj) => obj is ControlChange other && Equals(other);
 
     /// <inheritdoc />
-    public override int GetHashCode() => HashCode.Combine(Control, PreviousValue, Value);
+    public override int GetHashCode() => Control.GetHashCode() | PreviousValue.GetHashCode() | Value.GetHashCode();
 
     /// <summary>
     ///     Implements the == operator.
